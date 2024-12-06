@@ -1,0 +1,166 @@
+.container {
+  background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ffff00);
+  background-size: 400% 400%;
+  animation: gradientBackground 5s ease infinite;
+  padding: 50px;
+  font-family: 'Comic Sans MS', Arial, sans-serif;
+  font-size: 25px;
+  color: #ff4500;
+  text-align: center;
+  border: 10px dashed #ff00ff;
+  position: relative;
+  overflow: hidden;
+  will-change: background, opacity;
+}
+
+@keyframes gradientBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.w3schools.com/w3images/smiley.png');
+  background-repeat: repeat;
+  opacity: 0.2;
+  pointer-events: none;
+  animation: moveBackground 10s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+.bad-title {
+  color: #ff0000;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px #ffff00, -1px -1px 10px #00ff00;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.bad-input {
+  background-color: #ff00ff;
+  color: #ff0000;
+  font-size: 22px;
+  border: 5px solid #0000ff;
+  border-radius: 20px;
+  width: 300px;
+  padding: 15px;
+  margin: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px 5px #ff4500;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.bad-input:focus {
+  transform: scale(1.1);
+  outline: none;
+}
+
+.bad-submit-button {
+  background-color: #ff0000;
+  color: #ffffff;
+  font-size: 30px;
+  padding: 20px;
+  border-radius: 15px;
+  border: 5px dotted #00ff00;
+  width: 350px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.bad-submit-button:hover {
+  background-color: #ff4500;
+  transform: scale(1.05);
+}
+
+.terms-container {
+  background-color: #00ff00;
+  padding: 30px;
+  border: 4px dashed #ff00ff;
+  text-align: center;
+  font-size: 18px;
+  color: #ff4500;
+  box-shadow: 0 0 15px 10px #ff0000;
+}
+
+.checkbox-container {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.checkbox-container input {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.checkbox-container label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffff00;
+  text-shadow: 1px 1px 5px #ff0000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "FASTER !!";
+  font-size: 500px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: rgb(35, 2, 54);
+  position: absolute;
+  top: 55%;
+  left: -100%;
+  transform: translateY(-50%);
+  animation: fly 5s ease-in-out infinite;
+}
+
+@keyframes fly {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  50% {
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+input:focus {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+    transition: none;
+  }
+}
